@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import mayur from "../assets/mayur.jpg"; // Replace with the actual image path
+import mayur from "../assets/mayur.jpg"; 
 
 function AboutUs() {
   return (
