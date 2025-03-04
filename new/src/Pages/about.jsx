@@ -1,77 +1,49 @@
-import React from 'react';
-import './About.css';
-import leader from '../assets/leader.jpg';
-function About() {
+import React from "react";
+import "./About.css";
+import mayur from "../assets/mayur.jpg"; // Replace with the actual image path
+
+function AboutUs() {
   return (
-    <div className="about-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">Romo Technologies</div>
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#career">Career</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </nav>
-
-      <div className="about-container">
-      <section className="life-at-romo">
-      <h1>
-            LIFE AT <span className="orange">ROMO</span>
-       </h1>
-      <p>
-               As true partners to our clients, we solve problems, not tickets. Our developers, strategists, and designers
-                   are autonomous, outspoken, collaborative, and love doing the work. We've kept our team small and our org flat
-               on purpose: that's how we stay nimble, transparent, and human-centric. We have a passionate team and are
-              headquartered in [Your Location].
+    <>
+      {/* About Section */}
+      <section className="about-container">
+        <h2 className="about-heading">
+          About <span className="highlight">Romo</span>
+        </h2>
+        <p className="about-text">
+          Romo Technologies is a leading IT solutions provider dedicated to empowering businesses through 
+          innovative technology. With a focus on software development, web applications, cloud computing, 
+          cybersecurity, AI, etc., we deliver cutting-edge solutions that drive efficiency, scalability, 
+          and growth for organizations of all sizes.
         </p>
-       </section>
+        <p className="about-text">
+          Founded in 2020, our team of experienced professionals brings together expertise in key areas, 
+          e.g., software engineering, data analytics, IT infrastructure, etc. We pride ourselves on 
+          staying ahead of the curve by leveraging the latest advancements in technology to solve complex 
+          challenges and deliver measurable results.
+        </p>
+      </section>
 
-
-        <section className="leadership">
-          <h2> ROMO <span className="orange">LEADERSHIP</span></h2>
-          <div className="leadership-grid">
-            {/* Leadership Cards */}
-            <div className="leadership-card">
-              <img src={leader} alt="Leader 1" />
-            </div>
-            <div className="leadership-card">
-              <img src={leader}  alt="Leader 2" />
-            </div>
-            <div className="leadership-card">
-              <img src={leader}  alt="Leader 3" />
-            </div>
-            <div className="leadership-card">
-              <img src={leader}  alt="Leader 4" />
-            </div>
-            <div className="leadership-card">
-              <img src={leader}  alt="Leader 5" />
-            </div>
-            <div className="leadership-card">
-              <img src={leader}  alt="Leader 6" />
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2024 Romo Technologies. All rights reserved.</p>
-          <div className="social-icons">
-            <a href="#facebook">Facebook</a>
-            <a href="#twitter">Twitter</a>
-            <a href="#linkedin">LinkedIn</a>
+      {/* CEO Testimonial Section */}
+      <section className="testimonial-container">
+        <div className="testimonial-content">
+          <p className="testimonial-text">
+            At Romo Technologies , we believe in building long-term partnerships with our clients. 
+            By understanding their unique needs, we tailor our solutions to
+            ensure seamless integration, enhanced productivity, and a competitive edge in today’s digital landscape.
+          </p>
+          <div className="ceo-info">
+            <img src={mayur} alt="CEO" className="ceo-image" />
+            <p className="ceo-name">Mayur sir / Founder & CMO</p>
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+    </>
   );
 }
 
-export default About;
+export default AboutUs;
+
 
 
 
