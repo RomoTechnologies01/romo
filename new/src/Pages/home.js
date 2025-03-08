@@ -15,39 +15,38 @@ function Home() {
   ];
 
   useEffect(() => {
-    if (!timelineRef.current) return; // Ensure timelineRef exists
+  if (!timelineRef.current) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-    const observeElements = () => {
-      const timelineItems = timelineRef.current?.querySelectorAll(".timeline-item");
-      timelineItems?.forEach((item) => observer.observe(item));
-    };
+  const observeElements = () => {
+    const timelineItems = timelineRef.current?.querySelectorAll(".timeline-item");
+    timelineItems?.forEach((item) => observer.observe(item));
+  };
 
-    // Initial observation of elements
+  observeElements();
+
+  const mutationObserver = new MutationObserver(() => {
     observeElements();
+  });
 
-    // MutationObserver to detect dynamically added elements
-    const mutationObserver = new MutationObserver(() => {
-      observeElements(); // Re-observe if new elements are added
-    });
+  mutationObserver.observe(timelineRef.current, { childList: true, subtree: true });
 
-    mutationObserver.observe(timelineRef.current, { childList: true, subtree: true });
+  return () => {
+    observer.disconnect();
+    mutationObserver.disconnect();
+  };
+}, []); // ✅ Removed `timelineRef.current` from dependencies
 
-    return () => {
-      observer.disconnect();
-      mutationObserver.disconnect();
-    };
-  }, [timelineRef.current]); // Re-run when timelineRef.current changes
 
 
 
@@ -84,7 +83,7 @@ function Home() {
       {/* Timeline Section */}
       
       <div className="timeline-section" ref={timelineRef}>
-        <div className="timeline-title">
+        <div className="timeline-title">  
           <h2>
             <span className="highlight-white">Our</span>{" "}
             <span className="highlight-orange">Journey</span>
