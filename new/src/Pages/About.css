@@ -1,139 +1,72 @@
-
-/* General Styling */
-.about-page {
-  background-color: #111; /* Consistent background across sections */
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10px;
-  background-color: #222;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  color: #ff6600;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ff6600;
-  transition: width 0.3s ease-in-out;
-}
-
+/* About Section - Full Screen */
 .about-container {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-
-/* Life at Romo Section */
-.life-at-romo {
+  background-color: black;
+  color: white;
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 15%;
 }
 
-.life-at-romo h1 {
-  font-size: 4rem;
-  font-weight: 700;
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff6600;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin-bottom: 15px;
+}
+
+/* CEO Testimonial Section - Separate Scrolling Section */
+.testimonial-container {
+  background-color: #1a1a1a; /* Dark grey background */
+  padding: 60px 15%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 50vh; /* Ensures enough spacing */
+  text-align: left;
+}
+
+.testimonial-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  max-width: 700px;
+  border-radius: 5px;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
   color: white;
 }
 
-.life-at-romo h1 .orange {
-  color: #ff6600;
+.ceo-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.life-at-romo p {
-  max-width: 800px;
-  font-size: 1.2rem;
-  line-height: 1.8;
+.ceo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-/* Leadership Section */
-.leadership {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.leadership h2 {
-  font-size: 3rem;
-  margin-bottom: 40px;
-}
-
-.leadership h2 .orange {
-  color: #ff6600;
-}
-
-
-.leadership-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.leadership-card {
-  background-color: #111;
-  padding: 20px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.leadership-card img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.footer {
-  padding: 10px;
-  background: #111;
-  color: #fff;
-  text-align: center;
-}
-
-.footer .social-icons a {
-  color: #ff6600;
-  margin: 0 10px;
-  text-decoration: none;
+.ceo-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
 }
